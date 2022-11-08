@@ -1,6 +1,5 @@
 import React from "react";
 import image from "../assets/cardback.png";
-import card1 from "./Ace.png"
 
 const SingleCard = ({card  ,handelCard ,flipped,disabled,img})=>{
     const handeClick = ()=>{

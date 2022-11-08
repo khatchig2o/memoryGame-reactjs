@@ -17,6 +17,7 @@ const App =()=>{
     const [choiceone,setchoiceone]= useState(null)
     const [choicetwo,setchoicetwo]= useState(null)
     const [disabled,setDisabled] = useState(false)
+    const [played , setplayed] = useState(0)
 
     const shuffelCards=()=>{
         const shufeldcards = [...cardImages,...cardImages].sort(()=>Math.random() - 0.5)
@@ -43,6 +44,9 @@ const App =()=>{
                         return card
                     }
                 }))
+                setplayed(prevTurn => prevTurn + 1)
+                console.log(played)
+                gameEnd ()
                 resetTurn()
             }else {
                 setTimeout(()=>{
@@ -51,6 +55,7 @@ const App =()=>{
             }
         }
     },[choiceone,choicetwo])
+
     const resetTurn=()=>{
         setchoiceone(null);
         setchoicetwo(null);
@@ -62,6 +67,17 @@ const App =()=>{
     useEffect(()=>{
         shuffelCards()
     },[])
+
+    const gameEnd = ()=>{
+        if(played === 5){
+            setplayed(0)
+            setTimeout(()=> {
+                shuffelCards()
+                alert("you won congrats")
+
+            }, 1000)
+        }
+    }
 
     return(
         <div className="G-flex-colum parent">
