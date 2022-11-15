@@ -1,3 +1,20 @@
+header{
+  background-color: white;
+  padding: 5px 20px;
+  margin-bottom: 20px;
+}
+.navbar{
+  display: flex;
+  gap: 40px;
+}
+.navbar li{
+ border: 1px solid black;
+  padding: 5px 10px;
+}
+
+.active{
+  color: green;
+}
 
 body{
   background-color: $dark-black;
@@ -10,13 +27,17 @@ body{
   background-repeat: no-repeat;
   background-size:cover;
   border: 5px solid white;
+  border-radius: 10px;
+
 }
 .front{
   border: none;
   width: 150px;
   height: 180px;
 }
-
+h1{
+  color: white;
+}
 .container{
   gap: 40px;
   width: 860px;
@@ -77,7 +98,6 @@ button:hover{
   background-color: #c23866;
   color: $white;
 }
-
 
 
 
